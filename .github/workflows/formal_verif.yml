@@ -31,9 +31,6 @@ jobs:
           for sby_path in $(find . -iname "*.sby"); do 
               sby_script=${sby_path##*/}
               cd ${sby_path%/*}
-              #sby --prefix ../verif_out/ --yosys "yosys -m ghdl" -f $sby_script
-              echo $sby_path
-              echo $sby_script
-              # ^
+              sby --prefix ../verif_out/ --yosys "yosys -m ghdl" -f $sby_script
               cd -
           done
